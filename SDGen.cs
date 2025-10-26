@@ -19,8 +19,6 @@ namespace SigmaDelta
 		double _V4 = 0;
 		double _V5 = 0;
 		int _sampleCount = 0;
-		bool _catch = false;
-		List<bool> _catchList = new List<bool>();
 
 		public double Time { get { return _sampleCount / 1000000.0; } }
 
@@ -30,21 +28,13 @@ namespace SigmaDelta
 			_nVref = nVref;
 		}
 
-        public void Catch()
-        {
-			_catchList.Clear();
-			_catch = true;
-        }
-
 		public void Clear()
         {
-			_catchList.Clear();
 			_V1 = 0;
 			_V2 = 0;
             _V3 = 0;
 			_V4 = 0;
 			_V5 = 0;
-			_catch = false;
 			_sampleCount = 0;
 		}
 
@@ -65,20 +55,6 @@ namespace SigmaDelta
 			else
 			{
 				_V5 = _nVref;
-			}
-			if (_catch)
-			{
-				_catchList.Add(returnValue);
-				if (_catchList.Count() >= 10000)
-				{
-					var cnt = _catchList.Count(v => v);
-					var tVal = cnt / 10000.0 * _pVref;
-					if (tVal > 0)
-					{
-						Console.WriteLine("out val = {0}", tVal);
-					}
-					_catch = false;
-				}
 			}
 			return returnValue;
         }

@@ -10,8 +10,6 @@ namespace SigmaDelta
 {
 	internal class Sinc3Filter
 	{
-        public double Time;
-
 		uint _Delta = 0;
 		uint _CN1, _CN2, _CN3, _CN4, _CN5;
 		uint _DN0, _DN1, _DN3, _DN5;

@@ -55,11 +55,6 @@ namespace SigmaDelta
 			return _Vout * _fullScalePreVref + _nVref;
 		}
 
-		public void Catch()
-        {
-			sdGen.Catch();
-		}
-
 		private int GetBitPosition(int ratio)
 		{
 			for (int i = 30; i > 0; i--)

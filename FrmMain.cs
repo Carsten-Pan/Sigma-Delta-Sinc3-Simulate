@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace SigmaDelta
 {
-	public partial class Form1 : Form
+	public partial class FrmMain : Form
 	{
 		SDInstance sDInstance;
-		public Form1()
+		public FrmMain()
 		{
 			InitializeComponent();
 		}
@@ -40,11 +40,6 @@ namespace SigmaDelta
 		private void BtnStop_Click(object sender, EventArgs e)
 		{
 			sDInstance.Stop();
-		}
-
-		private void BtnCatch_Click(object sender, EventArgs e)
-		{
-			sDInstance?.Catch();
 		}
 
 		private void BtnSet_Click(object sender, EventArgs e)
